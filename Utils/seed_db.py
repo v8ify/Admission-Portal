@@ -14,6 +14,16 @@ def transform_na(student_info: list, index: int):
     else:
         student_info[index] = 1
 
+
+def get_maximum_data_rows(sheet_object):
+    '''Gets the max number of rows in the excel worksheet.
+    These rows contain actual data instead of being empty'''
+    rows = 0
+    for _, row in enumerate(sheet_object, 1):
+        if not all(col.value is None for col in row):
+            rows += 1
+    return rows
+
 # read excel sheet
 path_to_excel = input("Enter the path to your excel data file: ")
 
@@ -50,7 +60,10 @@ try:
                                     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
                                     %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
 
-    for row in worksheet.iter_rows(2, 4):
+    # get the maximum number of rows containing actual data
+    max_rows = get_maximum_data_rows(worksheet)
+
+    for row in worksheet.iter_rows(2, max_rows):
         row_list = list(row)
         
         student_prn = row_list[2].value
