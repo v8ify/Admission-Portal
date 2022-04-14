@@ -5,6 +5,12 @@ CREATE TABLE student_auth (
     antiragging_uploaded BIT(1) DEFAULT 0
 );
 
+CREATE TABLE superuser (
+    email VARCHAR(100) PRIMARY KEY,
+    name VARCHAR(100) DEFAULT NULL,
+    password TEXT NOT NULL
+);
+
 CREATE INDEX idx_student_auth_prn ON student_auth(prn);
 
 
@@ -56,6 +62,17 @@ CREATE TABLE student_data (
 
     course_name TEXT NOT NULL,
     admission_date DATE NOT NULL,
+
+    -- the engineering year (SE, TE, BE) the user is taking admission for
+    year_of_engineering VARCHAR(2) DEFAULT NULL,
+
+    -- we currently have three divisions in our college A, B and SS
+    division VARCHAR(2) DEFAULT NULL,
+
+    -- this column states the calendar year the student is taking admission in
+    -- for example, if I am in FE and taking an admission to SE for the year 2021-22
+    -- the values of this column will be 2021
+    admission_calendar_year YEAR(4) DEFAULT NULL,
 
     FOREIGN KEY (prn) REFERENCES student_auth(prn)
 );
