@@ -1,6 +1,11 @@
 
 <?php
     session_start();
+    if (!$_SESSION["prn"])
+    {
+      header("location: ./home.php?");
+      exit();
+    }
     require_once 'inc_con.php';
     require_once 'inc_function.php';    
     
@@ -372,7 +377,7 @@
             </div><br><br>
 
             <input type="submit" class="btn btn-outline-primary" name="submit" id="submit">
-        
+            <button type="button"  class="btn btn-outline-primary" value="logout" id="logout" name="logout">Logout</button>
             <button type="button"  class="btn btn-outline-primary" id="edit" name="edit">edit</button>
           </form>
           
@@ -423,6 +428,9 @@
                 document.getElementById('pincode').readOnly=false;
                 document.getElementById('mob').readOnly=false;
                 document.getElementById('email').readOnly=false;
+            };
+            document.getElementById("logout").onclick = function () {
+            location.href = "./logout.php";
             };
 </script>
 

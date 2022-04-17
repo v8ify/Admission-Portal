@@ -2,7 +2,7 @@
     $serverName="localhost";
     $dBUsername="root";
     $dBPassword="";
-    $dBName="adimission_portal";
+    $dBName="admission_portal";
     $conn = mysqli_connect($serverName,$dBUsername,$dBPassword,$dBName);
 
     if (!$conn)
