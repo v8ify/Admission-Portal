@@ -95,8 +95,6 @@ try:
         transform_na(student_data, 24)
         transform_na(student_data, 25)
 
-        print(len(student_data))
-
         password = random.randint(10000, 99999)
 
         # record to insert in student_auth table
