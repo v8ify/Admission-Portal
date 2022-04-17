@@ -1,20 +1,15 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-<title>Title of the document</title>
+    <title>
+
+    </title>
 </head>
-
 <body>
-    <div>
-        <form>
-            <label>PRN</label>
-            <input type="text" name="PRN"/>
-            <label>Password</label>
-            <input type="text" name="Password"/>
-            <button type="Submit">login</button>
-        </form>
-
-    </div>
+    
+<form action="./inc_home.php" method="POST">
+    <input type="submit" name="studentLogin" value="Student Login">
+    <input type="submit" name="adminLogin" value="Admin Login">
+</form>
 </body>
-
 </html>
