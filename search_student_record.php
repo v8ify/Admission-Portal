@@ -1,9 +1,9 @@
 <?php
     session_start();
 
-    if (!$_SESSION["prn"])
+    if (!isset($_POST["prn"]))
     {
-      header("location: ./home.php");
+      header("location: ./dashboard.php?error=InvalidInput");
       exit();
     }
 
