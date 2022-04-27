@@ -10,7 +10,7 @@
     require_once 'inc_con.php';
     require_once 'inc_function.php';
 
-    $prn = $_SESSION["prn"];
+    $prn = $_POST["prn"];
 
     $row = studentRecord($conn,$prn);
 
@@ -48,6 +48,8 @@
                 
                 <div>Fee for PRN <?php echo $prn ?> is Rs. <?php echo $feeRow["fee"] ?> </div>
 
+                <input type="hidden" name="prn" id="prn" value="<?php echo $prn ?>" />
+
                 <button type="submit">Approve Fee Payment</button>
            </form>
         <?php else: ?>
@@ -57,6 +59,7 @@
                     <input type="text" name="fee_category" id="fee_category" value="<?php echo $row["fee_paying_category"]; ?>" />
                 </div>
                 
+                <input type="hidden" name="prn" id="prn" value="<?php echo $prn ?>" />
                 
                 <button type="submit">Approve Fee Paying Category</button>
             </form>

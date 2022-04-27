@@ -238,3 +238,33 @@ function getStudentFees($conn, $prn)
     mysqli_stmt_close($stmt);
 }
 
+
+// This function approves the fee category of a student
+// Used by admin
+function approveFeeCategory($conn, $prn)
+{
+    $q = "UPDATE student_auth set fee_category_approved = 1 WHERE prn='$prn'";
+    
+    if ($result = mysqli_query($conn, $q))
+    {
+        header("location: ./dashboard.php?success=FeeCategoryApproved");
+    }
+    else{
+        header("location: ./dashboard.php?error=failedtoupdate");
+    }
+}
+
+// This function approves the fee category of a student
+// Used by admin
+function approveFeePayment($conn, $prn)
+{
+    $q = "UPDATE student_auth set payment_done = 1 WHERE prn='$prn'";
+    
+    if ($result = mysqli_query($conn, $q))
+    {
+        header("location: ./dashboard.php?success=FeePaymentApproved");
+    }
+    else{
+        header("location: ./dashboard.php?error=failedtoupdate");
+    }
+}
