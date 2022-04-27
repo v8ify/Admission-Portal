@@ -376,6 +376,24 @@
                 aria-describedby="basic-addon1" required >
             </div><br><br>
 
+            <h6>Fee paying category</h6>
+            <div>
+              <select name="fee_paying_category" id="fee_paying_category">
+                <option value="OPEN">OPEN</option>
+                <option value="OBC">OBC</option>
+                <option value="SEBC">SEBC</option>
+                <option value="EWS">EWS</option>
+                <option value="EBC">EBC</option>
+                <option value="VJNT">VJNT</option>
+                <option value="TFWS">TFWS</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+                <option value="J & K">J & K</option>
+                <option value="GOI">GOI</option>
+                <option value="JKSSS">JKSSS</option>
+              </select>
+            </div><br><br>
+
             <input type="submit" class="btn btn-outline-primary" name="submit" id="submit">
             <button type="button"  class="btn btn-outline-primary" value="logout" id="logout" name="logout">Logout</button>
             <button type="button"  class="btn btn-outline-primary" id="edit" name="edit">edit</button>

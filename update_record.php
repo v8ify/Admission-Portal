@@ -22,6 +22,7 @@ if (isset($_POST['submit']))
     $yoe=$_POST["yoe"];
     $div=$_POST["divi"];
     $acy=$_POST["acy"];
+    $fee_category = $_POST["fee_paying_category"];
 
     if (emptyInput($line1) || emptyInput($line2) || emptyInput($pinCode) || emptyInput($yoe) || emptyInput($div) || emptyInput($acy))
     {
@@ -35,7 +36,7 @@ if (isset($_POST['submit']))
     {
         header("location: ./display.php?error=invalidmob");
     }
-    update_record($conn,$prn,$line1,$line2,$line3,$state,$district,$taluka,$village,$pinCode,$mob,$email,$yoe,$div,$acy,);
+    update_record($conn,$prn,$line1,$line2,$line3,$state,$district,$taluka,$village,$pinCode,$mob,$email,$yoe,$div,$acy, $fee_category);
     
 
    
