@@ -210,3 +210,31 @@ function studentAuth($conn, $prn)
     mysqli_stmt_close($stmt);
 }
 
+// This function returns a row from fee_matrix table to which this
+// user with prn belongs to
+function getStudentFees($conn, $prn)
+{
+    $sql_quer = "SELECT * FROM fee_matrix WHERE year = (SELECT YEAR(admission_date) FROM student_data as sd WHERE sd.prn = ?)
+          AND category = (SELECT fee_paying_category FROM student_data as sd WHERE sd.prn = ?)";
+
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql_quer)) {
+        header("location: ./student_login.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "ss", $prn, $prn);
+    mysqli_stmt_execute($stmt);
+
+    $resultData=mysqli_stmt_get_result($stmt);
+
+    if ($row = mysqli_fetch_assoc($resultData))
+    {
+        return $row;
+    }
+    else{
+        $result = false;
+        return false;
+    }
+    mysqli_stmt_close($stmt);
+}
+
