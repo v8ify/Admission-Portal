@@ -22,12 +22,14 @@
 
     $student_auth = studentAuth($conn, $prn);
 
-    $payment_done = false;
+    $fee_category_approved = false;
 
-    if ($student_auth["payment_done"] == 1)
+    if ($student_auth["fee_category_approved"] == 1)
     {
-        $payment_done = true;
+        $fee_category_approved = true;
     }
+
+    $feeRow = getStudentFees($conn, $prn)
 
 ?>
 
@@ -41,8 +43,11 @@
 </head>
 <body>
     <div>
-        <?php if ($payment_done): ?>
+        <?php if ($fee_category_approved): ?>
             <form action="./payment_approval.php" method="post">
+                
+                <div>Fee for PRN <?php echo $prn ?> is Rs. <?php echo $feeRow["fee"] ?> </div>
+
                 <button type="submit">Approve Fee Payment</button>
            </form>
         <?php else: ?>
