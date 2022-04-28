@@ -3,7 +3,8 @@ CREATE TABLE student_auth (
     password TEXT NOT NULL,
     payment_done BIT(1) DEFAULT 0,
     antiragging_uploaded BIT(1) DEFAULT 0,
-    fee_category_approved BIT(1) DEFAULT 0
+    fee_category_approved BIT(1) DEFAULT 0,
+    antiragging_file_path TEXT
 );
 
 CREATE TABLE superuser (

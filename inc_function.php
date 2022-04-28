@@ -268,3 +268,19 @@ function approveFeePayment($conn, $prn)
         header("location: ./dashboard.php?error=failedtoupdate");
     }
 }
+
+// This function updates the status of the antiragging form upload
+// Used by user
+function handleAntiRaggingForm($conn, $prn, $filePath)
+{
+    $q = "UPDATE student_auth set antiragging_uploaded = 1, antiragging_file_path = '$filePath' WHERE prn='$prn'";
+    
+    if ($result = mysqli_query($conn, $q))
+    {
+       return true;
+    }
+    else
+    {
+        return false;
+    }
+}
