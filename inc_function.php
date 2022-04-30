@@ -1,6 +1,6 @@
 <?php
 
-
+//This function is to check user is exist in our database or not if yes then it return its record.
 function unidExists($conn,$var,$sql_quer)
 {
     
@@ -25,6 +25,7 @@ function unidExists($conn,$var,$sql_quer)
     mysqli_stmt_close($stmt);
 }
 
+//Validation for Email address.
 function InValidEmail($email)
 {
     $result=true;
@@ -40,6 +41,7 @@ function InValidEmail($email)
     return $result;
 }
 
+//Validation for Mobile number;
 function InValidMob($mob)
 {
     $result=true;
@@ -53,6 +55,7 @@ function InValidMob($mob)
     return $result;
 }
 
+//Validation for checking any empty input
 function emptyInput($var)
 {
     $result=true;
@@ -68,10 +71,7 @@ function emptyInput($var)
     return $result;
 }
 
-
-
-
-
+//Validation for checking empyt input in login page
 function emptyInputLogin($prn, $pwd)
 {
     $result=true;
@@ -87,6 +87,7 @@ function emptyInputLogin($prn, $pwd)
     return $result;
 }
 
+// This function logged in user to their account.
 function loginUser($conn, $prn, $pwd){
     $sql_query = " SELECT * FROM student_auth WHERE  prn = ?;";
     $Exits = unidExists($conn,$prn,$sql_query);
@@ -117,7 +118,7 @@ function loginUser($conn, $prn, $pwd){
     }
    
 }
-
+// This function logged in Admin to their account.
 function loginAdmin($conn, $username, $pwd)
 {
     $sql_query=" SELECT * FROM superuser where email=?; ";
@@ -149,6 +150,7 @@ function loginAdmin($conn, $username, $pwd)
     }
 }
 
+//This function return the student according to their prn number.
 function studentRecord($conn,$prn)
 {
     $sql_quer = " SELECT * FROM student_data WHERE  prn = ?;";
@@ -173,6 +175,7 @@ function studentRecord($conn,$prn)
     mysqli_stmt_close($stmt);
 }
 
+// This function updata student data
 function update_record($conn,$prn,$line1,$line2,$line3,$state,$district,$taluka,$village,$pinCode,$mob,$email,$yoe,$divi,$acy, $fee_category)
 {
     $q=" UPDATE student_data set line_1='$line1',line_2='$line2', line_3='$line3', state='$state',  district='$district', taluka='$taluka', village='$village' ,pincode='$pinCode',  mobile_number='$mob', email_address='$email', year_of_engineering='$yoe', division='$divi', admission_calendar_year='$acy', fee_paying_category = '$fee_category' WHERE prn='$prn' " ;
@@ -283,4 +286,40 @@ function handleAntiRaggingForm($conn, $prn, $filePath)
     {
         return false;
     }
+}
+
+function change_pwd($conn,$prn,$curr_pwd,$new_pwd,$conf_new_pwd )
+{
+    $query="SELECT *FROM student_auth where prn=?";
+    $row = unidExists($conn,$prn,$query);
+    if ($row === false)
+    {
+        header("location: ./Change_password_display.php?error=wrongprn");
+    }
+    if ($new_pwd !== $conf_new_pwd)
+    {
+        header("location: ./Change_password_display.php?error=new_passwordIsnotsameasconfirmpassword");
+        exit();
+    }
+    if ($new_pwd === $curr_pwd)
+    {
+        header("location: ./Change_password_display.php?error=newpasswordshouldnotbesameascurrentpassword");
+    }
+    if ($row["password"]!==$curr_pwd)
+    {
+        header("location: ./Change_password_display.php?error=incorrectcurrentpassword");
+        exit();
+    }
+
+    $update_query="UPDATE student_auth SET password=? where prn=? and password=? ";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $update_query)) {
+        header("location: ./student_login.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "sss",$new_pwd ,$prn, $curr_pwd);
+    mysqli_stmt_execute($stmt);
+    $row2 = unidExists($conn,$prn,$query);
+    echo "password is changed";
+
 }

@@ -10,11 +10,13 @@
 
 <body>
     <div>
+        
         <form action="inc_login.php" method="post">
             <label for="PRN">PRN</label>
-            <input type="text" name="PRN"/>
+            <input type="text" name="PRN"/><br>
             <label for="Password">Password</label>
-            <input type="text" name="Password"/>
+            <input type="text" name="Password"/><br>
+            <a href="./Change_password_display.php">Change Password</a><br>
             <input type="submit" value="Login" name="studentLogin">
         </form>
 
