@@ -1,11 +1,12 @@
 <?php
-<<<<<<< HEAD
 
 if (isset($_POST["submit"]))
     echo "<p>New</p>";
-=======
+
 if (isset($_POST["submit"]))
->>>>>>> e00008c01834a1aaedcd1fbddabf8f16d866f550
+
+if (isset($_POST["submit"]))
+
     require_once 'inc_con.php';
     require_once 'inc_function.php';
     $prn = $_POST["prn"];
