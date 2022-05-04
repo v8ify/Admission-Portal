@@ -1,5 +1,12 @@
 <?php
+
 if (isset($_POST["submit"]))
+    echo "<p>New</p>";
+
+if (isset($_POST["submit"]))
+
+if (isset($_POST["submit"]))
+
     require_once 'inc_con.php';
     require_once 'inc_function.php';
     $prn = $_POST["prn"];

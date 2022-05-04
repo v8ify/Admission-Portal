@@ -320,6 +320,9 @@ function change_pwd($conn,$prn,$curr_pwd,$new_pwd,$conf_new_pwd )
     mysqli_stmt_bind_param($stmt, "sss",$new_pwd ,$prn, $curr_pwd);
     mysqli_stmt_execute($stmt);
     $row2 = unidExists($conn,$prn,$query);
-    echo "password is changed";
+ 
+
+    header("location: ./Change_password_display.php?true",);
+
 
 }
