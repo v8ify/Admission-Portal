@@ -33,8 +33,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .pay-display {
+            margin: 200px auto 0px;
+            width: 500px;
+            text-align: center;
+        }
+
+        .pay-warn {
+            margin: 30px auto;
+            color: orange;
+            width: 500px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Your total fee is: <?php echo $row["fee"] ?> </h1>
+    <h1 class="pay-display">Your total fee is: <?php echo $row["fee"] ?> </h1>
+
+    <div class="pay-warn">
+        Before doing the payment, get your fee paying category approved from college.
+    </div>
 </body>
 </html>
