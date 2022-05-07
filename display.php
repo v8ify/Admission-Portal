@@ -45,6 +45,7 @@
 
 <body>
 
+<?php include("navbar_template.php") ?>
 
 <section class="vh-100" style="background-color: #508bfc;">
   <div class="container py-5 h-100">
@@ -56,27 +57,27 @@
             <h6>Application Id</h6>
             <div>
              
-              <input type="text" name="Ayear"  placeholder="application Id" value="<?php echo $row["application_id"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="Ayear"  placeholder="application Id" value="<?php echo $row["application_id"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>Prn</h6>
             <div>
-              <input type="text" name="prn"  placeholder="Prn"  value="<?php echo $row["prn"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="prn"  placeholder="Prn"  value="<?php echo $row["prn"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
             <h6>Name</h6>
             <div>
-              <input type="text" name="name"  placeholder="Name"  value="<?php echo $row["name"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="name"  placeholder="Name"  value="<?php echo $row["name"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>Category</h6>
             <div>
-              <input type="text" name="cat"  placeholder="category"  value="<?php echo $row["category"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="cat"  placeholder="category"  value="<?php echo $row["category"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
@@ -84,21 +85,21 @@
           
             <h6>Gender</h6>
             <div>
-              <input type="text" name="grnder"  placeholder="Gender"  value="<?php echo $row["gender"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="grnder"  placeholder="Gender"  value="<?php echo $row["gender"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
            
 
             <h6> Fathers Name</h6>
             <div>
-              <input type="text" name="fname"  placeholder="Fathers Name"  value="<?php echo $row["fathers_name"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="fname"  placeholder="Fathers Name"  value="<?php echo $row["fathers_name"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
             
             <h6> Mothers Name</h6>
             <div >
-              <input type="text" name="Mname"  placeholder="Mothers Name"  value="<?php echo $row["mothers_name"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="Mname"  placeholder="Mothers Name"  value="<?php echo $row["mothers_name"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
@@ -106,21 +107,21 @@
 
             <h6>Date Of Birth</h6>
             <div >
-              <input type="date" name="dob"  placeholder="DOB"  value="<?php echo $row["date_of_birth"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="date" name="dob"  placeholder="DOB"  value="<?php echo $row["date_of_birth"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>Religion</h6>
             <div>
-              <input type="text" name="rel"  placeholder="Religion"  value="<?php echo $row["religion"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="rel"  placeholder="Religion"  value="<?php echo $row["religion"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>Region</h6>
             <div>
-              <input type="text" name="reg"  placeholder="Region"  value="<?php echo $row["region"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="reg"  placeholder="Region"  value="<?php echo $row["region"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
@@ -128,7 +129,7 @@
 
             <h6> Mother Toungue</h6>
             <div>
-              <input type="text" name="mt"  placeholder="Mother Tounge"  value="<?php echo $row["mother_tongue"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="mt"  placeholder="Mother Tounge"  value="<?php echo $row["mother_tongue"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
@@ -137,62 +138,62 @@
 
             <h6>Annual Income </h6>
             <div>
-              <input type="text" name="ai"   placeholder="Annual Income "  value="<?php echo $row["annual_income_start"],"-",$row["annual_income_end"];?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="ai"   placeholder="Annual Income "  value="<?php echo $row["annual_income_start"],"-",$row["annual_income_end"];?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>Address Line 1</h6>
             <div>
-              <input type="text" name="ad1" id="line_1"  placeholder="Address Line 1"  value="<?php echo $row["line_1"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="ad1" id="line_1"  placeholder="Address Line 1"  value="<?php echo $row["line_1"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
 
             <h6>Address Line 2</h6>
             <div>
-              <input type="text" name="ad2" id="line_2"  placeholder="Address Line 2" value="<?php echo $row["line_2"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="ad2" id="line_2"  placeholder="Address Line 2" value="<?php echo $row["line_2"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
 
             <h6>Address Line 3</h6>
             <div>
-              <input type="text" name="ad3"  id="line_3"  placeholder="Address Line 3" value="<?php echo $row["line_3"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="ad3"  id="line_3"  placeholder="Address Line 3" value="<?php echo $row["line_3"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
 
             <h6>State</h6>
             <div>
-              <input type="text" name="state" id="state"   placeholder="State" value="<?php echo $row["state"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="state" id="state"   placeholder="State" value="<?php echo $row["state"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
 
             <h6>District</h6>
             <div>
-              <input type="text" name="district" id="district"  placeholder="District" value="<?php echo $row["district"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="district" id="district"  placeholder="District" value="<?php echo $row["district"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
             <h6>Taluka</h6>
             <div>
-              <input type="text" name="taluka" id="taluka"  placeholder="taluka" value="<?php echo $row["taluka"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="taluka" id="taluka"  placeholder="taluka" value="<?php echo $row["taluka"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
 
             <h6>Village</h6>
             <div>
-              <input type="text" name="village" id="village"  placeholder="village" value="<?php echo $row["village"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="village" id="village"  placeholder="village" value="<?php echo $row["village"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
 
             <h6>Pin Code</h6>
             <div>
-              <input type="number" name="pinCode" id="pincode"  placeholder="Pin Code" value="<?php echo $row["pincode"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="number" name="pinCode" id="pincode"  placeholder="Pin Code" value="<?php echo $row["pincode"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
 
             <h6>Phone Number</h6>
             <div>
-              <input type="number" name="mobnumber" id="mob"  placeholder="Phone Number" value="<?php echo $row["mobile_number"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="number" name="mobnumber" id="mob"  placeholder="Phone Number" value="<?php echo $row["mobile_number"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly  >
             </div><br><br>
             
@@ -201,137 +202,137 @@
 
             <h6>Email Id</h6>
             <div>
-              <input type="email" name="email" id="email"  placeholder="Email Id"  value="<?php echo $row["email_address"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="email" name="email" id="email"  placeholder="Email Id"  value="<?php echo $row["email_address"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly >
             </div><br><br>
             
 
             <h6>PH Type</h6>
             <div>
-              <input type="text" name="ph"  placeholder="PH type " value="<?php echo $row["physically_handicapped"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="ph"  placeholder="PH type " value="<?php echo $row["physically_handicapped"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>Linguistic Minority</h6>
             <div>
-              <input type="text" name="lm"  placeholder="Linguistic Minority " value="<?php echo $row["linguistic_minority"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="lm"  placeholder="Linguistic Minority " value="<?php echo $row["linguistic_minority"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>Religious Minority</h6>
             <div>
-              <input type="text" name="rm"  placeholder="Religious Minority " value="<?php echo $row["religious_minority"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="rm"  placeholder="Religious Minority " value="<?php echo $row["religious_minority"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>SSC Board </h6>
             <div>
-              <input type="text" name="sb"  placeholder="SSC Board " value="<?php echo $row["ssc_board"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="sb"  placeholder="SSC Board " value="<?php echo $row["ssc_board"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>SSC Passing Year </h6>
             <div>
-              <input type="number" name="spy"  placeholder="SSC Passing Year " value="<?php echo $row["ssc_passing_year"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="number" name="spy"  placeholder="SSC Passing Year " value="<?php echo $row["ssc_passing_year"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
            
 
             <h6>SSC Marks </h6>
             <div>
-              <input type="number" name="sm"  placeholder="SSC Marks " value="<?php echo $row["ssc_total_percentage"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="number" name="sm"  placeholder="SSC Marks " value="<?php echo $row["ssc_total_percentage"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
             <h6>Qualifying Exam </h6>
             <div>
-              <input type="text" name="qualifying_exam"  placeholder="Qualifying Exam " value="<?php echo $row["qualifying_exam"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="qualifying_exam"  placeholder="Qualifying Exam " value="<?php echo $row["qualifying_exam"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
 
             <h6>HSC Board </h6>
             <div>
-              <input type="text" name="hb"  placeholder="HSC Board " value="<?php echo $row["hsc_board"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="hb"  placeholder="HSC Board " value="<?php echo $row["hsc_board"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>HSC Passing Year </h6>
             <div>
-              <input type="number" name="hpy"  placeholder="HSC Passing Year " value="<?php echo $row["hsc_passing_year"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="number" name="hpy"  placeholder="HSC Passing Year " value="<?php echo $row["hsc_passing_year"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>HSC Physics Marks </h6>
             <div>
-              <input type="number" name="hpm"  placeholder=" Marks " value="<?php echo $row["physics_percentage"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="number" name="hpm"  placeholder=" Marks " value="<?php echo $row["physics_percentage"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>HSC Chemistry Marks </h6>
             <div>
-              <input type="number" name="hcm"  placeholder=" Marks "  value="<?php echo $row["chemistry_percentage"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="number" name="hcm"  placeholder=" Marks "  value="<?php echo $row["chemistry_percentage"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
            
 
             <h6>HSC Maths Marks </h6>
             <div>
-              <input type="number" name="hmm"  placeholder=" Marks "  value="<?php echo $row["math_percentage"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="number" name="hmm"  placeholder=" Marks "  value="<?php echo $row["math_percentage"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>HSC Total Marks </h6>
             <div>
-              <input type="number" name="hm"  placeholder="HSC Marks "  value="<?php echo $row["hsc_total_percentage"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="number" name="hm"  placeholder="HSC Marks "  value="<?php echo $row["hsc_total_percentage"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>Eligibility Percentage</h6>
             <div>
-              <input type="number" name="ep"  placeholder="Eligibility Percentage "  value="<?php echo $row["eligibility_percentage"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="number" name="ep"  placeholder="Eligibility Percentage "  value="<?php echo $row["eligibility_percentage"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>CET Percentile</h6>
             <div>
-              <input type="number" name="cp"  placeholder="CET Percentile "  value="<?php echo $row["cet_percentile"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="number" name="cp"  placeholder="CET Percentile "  value="<?php echo $row["cet_percentile"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>JEE Percentile</h6>
             <div>
-              <input type="number" name="jp"  placeholder="JEE Percentile "  value="<?php echo $row["jee_percentile"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="number" name="jp"  placeholder="JEE Percentile "  value="<?php echo $row["jee_percentile"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>Merit Number</h6>
             <div>
-              <input type="number" name="mn"  placeholder="Merit Number "  value="<?php echo $row["merit_no"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="number" name="mn"  placeholder="Merit Number "  value="<?php echo $row["merit_no"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br>
             
 
             <h6>Merit Marks</h6>
             <div>
-              <input type="number" name="mm"  placeholder="Merit Marks "  value="<?php echo $row["merit_marks"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="number" name="mm"  placeholder="Merit Marks "  value="<?php echo $row["merit_marks"]?>" aria-label="Username"
                 aria-describedby="basic-addon1" required readonly>
             </div><br><br> 
 
             <h6>Branch</h6>
             <div>
-              <input type="text" name="branch"  placeholder="Branch"   value="<?php echo $row["course_name"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="branch"  placeholder="Branch"   value="<?php echo $row["course_name"]?>" aria-label="Username"
                 aria-describedby="basic-addon1"  readonly>
             </div><br><br>
 
@@ -346,13 +347,13 @@
             
             <h6>Admission Date</h6>
             <div >
-              <input type="date" class="editable"  value="<?php echo $row["admission_date"]?>" aria-label="Username"
+              <input class="form-control form-control-lg" type="date" class="editable"  value="<?php echo $row["admission_date"]?>" aria-label="Username"
                 aria-describedby="basic-addon1"  readonly>
             </div><br><br>
             
             <h6>Year of Engineering</h6>
             <div>
-              <select name="yoe" id="yoe">
+              <select class="form-select form-control" name="yoe" id="yoe">
                 <option value="SE">SE</option>
                 <option value="TE">TE</option>
                 <option value="BE">BE</option>
@@ -361,7 +362,7 @@
 
             <h6>Division</h6>
             <div>
-              <select name="divi" id="divi">
+              <select class="form-select form-control" name="divi" id="divi">
               
                 <option value="A">A</option>
                 <option value="B">B</option>
@@ -371,13 +372,13 @@
 
             <h6>Admission Calendar Year</h6>
             <div>
-              <input type="text" name="acy" id="acy"   placeholder="Admission Calender Year" value="" aria-label="Username"
+              <input class="form-control form-control-lg" type="text" name="acy" id="acy"   placeholder="Admission Calender Year" value="" aria-label="Username"
                 aria-describedby="basic-addon1" required >
             </div><br><br>
 
             <h6>Fee paying category</h6>
             <div>
-              <select name="fee_paying_category" id="fee_paying_category">
+              <select class="form-select form-control" name="fee_paying_category" id="fee_paying_category">
                 <option value="OPEN">OPEN</option>
                 <option value="OBC">OBC</option>
                 <option value="SEBC">SEBC</option>

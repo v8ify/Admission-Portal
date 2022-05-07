@@ -9,7 +9,7 @@
 </head>
 <body>
 
-
+<?php include("navbar_template.php") ?>
 
 <div class="container py-5 h-50">
     <div class="row d-flex justify-content-center align-items-center  h-100">

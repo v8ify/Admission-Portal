@@ -8,6 +8,9 @@
 </head>
 
 <body>
+
+<?php include("navbar_template.php") ?>
+
 <section class="vh-100" style="background-color: #508bfc;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">

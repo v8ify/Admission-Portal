@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0px;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+}
+
+.dropdown-link {
+    margin-right: 50px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 20px;
+}
