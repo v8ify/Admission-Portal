@@ -24,6 +24,21 @@
                                 </div>
                                 <div class="form-group mt-3">
                                     <button class="btn btn-primary" type="submit">Search</button>
+
+                                    <?php
+                                        if (isset($_GET["success"]))
+                                        {
+                                            if ($_GET["success"] == "FeeCategoryApproved")
+                                            {
+                                                echo "<h4>Fee Category Approved</h4>";
+                                            }
+                                            
+                                            else if ($_GET["success"] == "FeePaymentApproved"  )
+                                            {
+                                                echo "<h4>Fee Payment Approved</h4>"; 
+                                            }
+                                        }
+                                    ?>
                                 </div>
                             </form>
                         </div>
