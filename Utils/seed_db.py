@@ -5,7 +5,7 @@ from openpyxl import load_workbook
 import mysql.connector
 from mysql.connector import Error
 
-import random
+from dateutil.parser import parse
 
 # helper function to transform "Not Applicable" to 0
 def transform_na(student_info: list, index: int):
@@ -95,8 +95,9 @@ try:
         transform_na(student_data, 24)
         transform_na(student_data, 25)
 
-        print(len(student_data))
-        password = random.randint(10000, 99999)
+        # Convert the birth date to password
+        birthdate = student_data[7]
+        password = f"{birthdate.day}{birthdate.month}{birthdate.year}"
 
         # record to insert in student_auth table
         student_auth = [student_prn, password, 0, 0]
