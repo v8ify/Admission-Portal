@@ -14,8 +14,10 @@
 <div class="container py-5 h-50">
     <div class="row d-flex justify-content-center align-items-center  h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card shadow-2-strong border-4" style="border-radius: 1rem;">
                 <div class="card-body p-5 text-center">
+
+                <h3 class="mb-4">Welcome To Admission Portal</h3>
                 <form action="./inc_home.php" method="POST">
                     <div class="form-group">
                     <input type="submit" class="btn btn-primary" name="studentLogin" value="Student Login">
