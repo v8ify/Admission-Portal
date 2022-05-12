@@ -44,6 +44,44 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+                            <form action="./download_rollcall.php" method="get">
+                                <div class="form-group">
+                                    <label for="calendar_year">Academic Year</label>
+                                    <input class="form-control mt-3" type="number" name="calendar_year" id="calendar_year" placeholder="Enter academic year..." />
+                                </div>
+                                <div class="form-group">
+                                    <label for="year">Year</label>
+                                    <select class="form-select form-control" name="year" id="year">
+                                        <option value="SE">SE</option>
+                                        <option value="TE">TE</option>
+                                        <option value="BE">BE</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dept">dept</label>
+                                    <select class="form-select form-control" name="dept" id="dept">
+                                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                        <option value="Computer Engineering">Computer Engineering</option>
+                                        <option value="Electronics and Telecommunications Engineering">Electronics and Telecommunications Engineering</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="prn">Search for student by PRN</label>
+                                    <select class="form-select form-control" name="div" id="div">
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="SS">SS</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <button class="btn btn-primary" type="submit">Download</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
             </div>
         </div>
     </section>

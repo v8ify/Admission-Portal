@@ -326,3 +326,33 @@ function change_pwd($conn,$prn,$curr_pwd,$new_pwd,$conf_new_pwd )
 
 
 }
+
+
+// This function returns a row from fee_matrix table to which this
+// user with prn belongs to
+function get_roll_call($conn, $calendar_year, $year, $course_name, $division)
+{
+    $sql_quer = "SELECT prn, name FROM student_data WHERE admission_calendar_year = ?
+                 AND year_of_engineering = ? AND division = ? AND course_name = ? ";
+
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql_quer)) {
+        header("location: ./student_login.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "ssss", $calendar_year, $year, $division, $course_name);
+    mysqli_stmt_execute($stmt);
+
+    $resultData=mysqli_stmt_get_result($stmt);
+
+    if ($resultData -> num_rows > 0)
+    {
+        return $resultData;
+    }
+    else {
+        $result = false;
+        return false;
+    }
+
+    mysqli_stmt_close($stmt);
+}
