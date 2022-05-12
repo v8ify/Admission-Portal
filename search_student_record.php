@@ -96,7 +96,7 @@
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card border-3 shadow-2-strong" style="border-radius: 1rem;">
                         <div class="card-body p-5 text-center">
                             <?php if ($fee_category_approved): ?>
                                 <form action="./payment_approval.php" method="post" class="form">
@@ -113,7 +113,7 @@
                                 <form action="./fee_category_approval.php" method="post" class="form">
                                     <div class="form-group">
                                         <label for="fee_category">Fee Paying Category</label>
-                                        <input class="form-control" type="text" name="fee_category" id="fee_category" value="<?php echo $row["fee_paying_category"]; ?>" />
+                                        <input readonly class="form-control" type="text" name="fee_category" id="fee_category" value="<?php echo $row["fee_paying_category"]; ?>" />
                                     </div>
                                     
                                     <input type="hidden" name="prn" id="prn" value="<?php echo $prn ?>" />
