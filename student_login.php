@@ -23,7 +23,7 @@
                         <h3 class="mb-5">Sign in</h3>
 
                         <div class="form-outline mb-4">
-                        <input type="text" id="prn" name="PRN" class="form-control form-control-lg" placeholder="PRN" />
+                        <input type="text" id="prn" name="PRN" class="form-control form-control-lg" placeholder="College PRN" />
                         
                         </div>
 

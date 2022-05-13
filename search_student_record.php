@@ -29,7 +29,9 @@
         $fee_category_approved = true;
     }
 
-    $feeRow = getStudentFees($conn, $prn)
+    $feeRow = getStudentFees($conn, $prn);
+
+    $student_name = $row["name"];
 
 ?>
 
@@ -97,11 +99,17 @@
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card border-3 shadow-2-strong" style="border-radius: 1rem;">
-                        <div class="card-body p-5 text-center">
+                        <div class="card-body p-5 text-left">
                             <?php if ($fee_category_approved): ?>
                                 <form action="./payment_approval.php" method="post" class="form">
+                                        <h5>Student name: <?php echo $student_name ?> </h5>
+                                        <h5>College PRN : <?php echo $prn ?> </h5>
+                                        <h5>Class: <?php echo $row["year_of_engineering"] ?> </h5>
+                                        <h5>Course Name: <?php echo $row["course_name"] ?> </h5>
+                                        <h5>Division: <?php echo $row["division"] ?> </h5>
+
                                     
-                                    <h1>Fee for PRN <?php echo $prn ?> is Rs. <?php echo $feeRow["fee"] ?> </h1>
+                                    <h1>Fee for <?php echo $student_name ?>  PRN <?php echo $prn ?> is Rs. <?php echo $feeRow["fee"] ?> </h1>
 
                                     <input type="hidden" name="prn" id="prn" value="<?php echo $prn ?>" />
                                     
@@ -112,6 +120,12 @@
                                 <?php else: ?>
                                 <form action="./fee_category_approval.php" method="post" class="form">
                                     <div class="form-group">
+                                        <h4>Student name: <?php echo $student_name ?> </h4>
+                                        <h4>College PRN : <?php echo $prn ?> </h4>
+                                        <h4>Class: <?php echo $row["year_of_engineering"] ?> </h4>
+                                        <h4>Course Name: <?php echo $row["course_name"] ?> </h4>
+                                        <h4>Division: <?php echo $row["division"] ?> </h4>
+
                                         <label for="fee_category">Fee Paying Category</label>
                                         <input readonly class="form-control" type="text" name="fee_category" id="fee_category" value="<?php echo $row["fee_paying_category"]; ?>" />
                                     </div>
