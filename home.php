@@ -30,7 +30,25 @@
     </div>
 </div>
 
-<div class="container py-5 h-50">
+<div class="container py-2">
+    <div class="row d-flex justify-content-center align-items-center  h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-2-strong border-4" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+
+                <h4 class="mb-4">Under the guidance of</h4>
+                
+                <h3>Prof. Dr. S. K. Wagh</h2>
+                    
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container py-2" style="margin-top: -10px">
     <div class="row d-flex justify-content-center align-items-center  h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
             <div class="card shadow-2-strong border-4" style="border-radius: 1rem;">

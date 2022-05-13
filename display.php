@@ -83,6 +83,8 @@
               <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <div class="card shadow-2-strong" style="border-radius: 1rem;">
                   <div class="card-body p-5 text-center">
+                  <h4 class="text-danger mb-3">Before submitting the application please take the print out (Ctrl + P) of this page</h4>
+
                   <form action="./update_record.php"  method="POST">
                     <h6>Application Id</h6>
                     <div>
