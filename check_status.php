@@ -1,6 +1,7 @@
+<?php include("navbar_template.php") ?>
 <?php
-    session_start();
-    if (!$_SESSION["prn"])
+
+    if (!isset($_SESSION["prn"]))
     {
       header("location: ./student_login.php?");
       exit();
@@ -13,7 +14,7 @@
 
     if ($row==false)
     {
-        header("location: ./home.php?error=recordNotFound");
+        header("location: ./home.php?error=recordNotFound1");
         exit();
     }
 
@@ -32,7 +33,7 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <?php include("navbar_template.php") ?>
+    
 
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">

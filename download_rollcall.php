@@ -7,15 +7,20 @@
     include("xlsxwriter.class.php");
     include("inc_function.php");
     include("inc_con.php");
+    $headers = array($calendar_year,$dept,$year,$div);
+  
 
     $writer = new XLSXWriter();
 
-    $data = array(array("PRN", "Name"));
+    $data = array(array("SR.NO","PRN", "Name","Gender","Category","Fee Paying Category"));
 
     $result = get_roll_call($conn, $calendar_year, $year, $dept, $div);
-
+    $count=1;
     while ($row = mysqli_fetch_row($result)) {
-        array_push($data, $row);
+        $sr = (array($count,$row[0],$row[1],$row[2],$row[3],$row[4]));
+        array_push($data, $sr);
+        $count++;
+
     }
 
     $temp_file = tempnam(sys_get_temp_dir(), 'output.xlsx');
@@ -28,7 +33,7 @@
     header('Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 
     // It will be called file.xls
-    header('Content-Disposition: attachment; filename="output.xlsx"');
+    header('Content-Disposition: attachment; filename='.$calendar_year.'-'.$dept.'-'.$year.'-'.$div.'.xlsx');
 
     //No cache
     header('Expires: 0');

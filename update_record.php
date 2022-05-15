@@ -3,7 +3,7 @@
 require_once 'inc_con.php';
 require_once 'inc_function.php';
 session_start();
-if (isset($_POST['submit']))
+if (isset($_POST['studentLogin']))
 {
     $prn=$_SESSION["prn"];
     

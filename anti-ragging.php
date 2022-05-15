@@ -17,8 +17,12 @@
                         <div class="card-body p-5 text-center">
                             <form action="handle_file_upload.php" method="post" enctype='multipart/form-data'>
                                 <label>anti-ragging</label>
-                                <input class="form-control" type="file" name="anti-ragging"/>
-                                <button type="Submit" class="btn btn-primary">Upload</button>
+                                <input class="form-control" type="file" name="anti-ragging" />
+                                <br><br>
+                                <label>Income Certificate <p>(optional for those students who are not eligible for scholarship)</p></label>
+                                <input class="form-control" type="file" name="income-certificate"/>
+                                <br><br>
+                                <button type="Submit" name="studentLogin" class="btn btn-primary">Upload</button>
                             </form>
                         </div>
                     </div>

@@ -4,7 +4,9 @@ CREATE TABLE student_auth (
     payment_done BIT(1) DEFAULT 0,
     antiragging_uploaded BIT(1) DEFAULT 0,
     fee_category_approved BIT(1) DEFAULT 0,
-    antiragging_file_path TEXT
+    antiragging_file_path TEXT,
+
+    
 );
 
 CREATE TABLE superuser (
@@ -80,6 +82,9 @@ CREATE TABLE student_data (
     -- this might be different than the student's caste hence
     -- we have to make a separate column
     fee_paying_category VARCHAR(100),
+    
+    anti_ragging_upload_date DATETIME NULL,
+    admission_confirm_upload_date DATETIME NULL,
 
     FOREIGN KEY (prn) REFERENCES student_auth(prn)
 );

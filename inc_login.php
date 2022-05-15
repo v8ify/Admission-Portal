@@ -1,7 +1,7 @@
 <?php
     require_once 'inc_con.php';
     require_once 'inc_function.php';
-    session_start();    
+    
     if (isset($_POST["studentLogin"])){
         $prn = $_POST["PRN"];
         $pwd = $_POST["Password"];
@@ -36,7 +36,7 @@
             header("location:./admin_login.php?error=invalidEmail");
             exit();
         }
-        echo $userName," ",$pwd;
+        
         loginAdmin($conn, $userName, $pwd);
 
     
