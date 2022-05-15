@@ -1,6 +1,6 @@
 
 <?php
-    session_start();
+    
     if (!$_GET["prn"])
     {
       header("location: ./home.php?");

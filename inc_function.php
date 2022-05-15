@@ -143,10 +143,10 @@ function loginAdmin($conn, $username, $pwd)
     {
         
         session_start();
-        $_SESSION["username"] = $Exits["username"];
-        // echo $_SESSION["username"];
+        $_SESSION["admin"] = $Exits["email"];
+        // echo $_SESSION["admin"];
         header("location: ./dashboard.php");
-        exit();
+        // exit();
     }
 }
 
@@ -265,7 +265,12 @@ function approveFeePayment($conn, $prn)
     
     if ($result = mysqli_query($conn, $q))
     {
+        
+        $curdata=date("Y/m/d");
+        $q = "UPDATE student_data set admission_confirm_upload_date=NOW() WHERE prn='$prn'";
+        mysqli_query($conn, $q);
         header("location: ./dashboard.php?success=FeePaymentApproved");
+
     }
     else{
         header("location: ./dashboard.php?error=failedtoupdate");
@@ -332,8 +337,8 @@ function change_pwd($conn,$prn,$curr_pwd,$new_pwd,$conf_new_pwd )
 // user with prn belongs to
 function get_roll_call($conn, $calendar_year, $year, $course_name, $division)
 {
-    $sql_quer = "SELECT prn, name FROM student_data WHERE admission_calendar_year = ?
-                 AND year_of_engineering = ? AND division = ? AND course_name = ? ";
+    $sql_quer = "SELECT student_data.prn, name, gender, category, fee_paying_category FROM student_data INNER JOIN student_auth ON student_data.prn=student_auth.prn   WHERE admission_calendar_year = ?
+                 AND year_of_engineering = ? AND division = ? AND course_name = ? and student_auth.payment_done='1'   ORDER BY admission_confirm_upload_date";
 
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql_quer)) {
@@ -341,6 +346,33 @@ function get_roll_call($conn, $calendar_year, $year, $course_name, $division)
         exit();
     }
     mysqli_stmt_bind_param($stmt, "ssss", $calendar_year, $year, $division, $course_name);
+    mysqli_stmt_execute($stmt);
+
+    $resultData=mysqli_stmt_get_result($stmt);
+
+    if ($resultData -> num_rows > 0)
+    {
+        return $resultData;
+    }
+    else {
+        $result = false;
+        return false;
+    }
+
+    mysqli_stmt_close($stmt);
+}
+
+function list_of_student_submitted($conn)
+{
+    $sql_quer = "SELECT student_data.prn,student_data.name, student_data.year_of_engineering, student_data.division, student_data.course_name, student_data.category, student_data.fee_paying_category, student_data.admission_calendar_year FROM student_data INNER JOIN student_auth ON student_data.prn=student_auth.prn WHERE student_auth.antiragging_uploaded=? and student_auth.fee_category_approved=0 ORDER BY  student_data.anti_ragging_upload_date desc;";
+
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql_quer)) {
+        header("location: ./home.php?error=stmtfailed");
+        exit();
+    }
+    $n="1";
+    mysqli_stmt_bind_param($stmt,"s",$n);
     mysqli_stmt_execute($stmt);
 
     $resultData=mysqli_stmt_get_result($stmt);

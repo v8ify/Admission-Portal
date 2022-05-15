@@ -1,7 +1,7 @@
-
+<?php include("navbar_template.php") ?>
 <?php
-    session_start();
-    if (!$_SESSION["prn"])
+    
+    if (!isset($_SESSION["prn"]))
     {
       header("location: ./home.php?");
       exit();
@@ -14,7 +14,7 @@
 
     if ($row==false)
     {
-        header("location: ./home.php?error=recordNotFound");
+        header("location: ./home.php?error=recordNotFound2");
         exit();
     }
 
@@ -24,7 +24,7 @@
 
     if ($row==false)
     {
-        header("location: ./home.php?error=recordNotFound");
+        header("location: ./home.php?error=recordNotFound3");
         exit();
     }
 
@@ -60,7 +60,7 @@
 
 <body >
 
-<?php include("navbar_template.php") ?>
+
 
       <?php if ($is_admission_done): ?>
 
@@ -410,7 +410,7 @@
 
                     <h6>Fee paying category</h6>
                     <div>
-                      <select class="form-select form-control" name="fee_paying_category" id="fee_paying_category">
+                      <select class="form-select form-control" value="<?php echo $row["category"]?>" name="fee_paying_category" id="fee_paying_category">
                         <option value="OPEN">OPEN</option>
                         <option value="OBC">OBC</option>
                         <option value="SEBC">SEBC</option>
@@ -426,7 +426,7 @@
                       </select>
                     </div><br><br>
 
-                    <input type="submit" class="btn btn-outline-primary" name="submit" id="submit">
+                    <input type="submit" class="btn btn-outline-primary" name="studentLogin" id="studentLogin">
                     <button type="button"  class="btn btn-outline-primary" value="logout" id="logout" name="logout">Logout</button>
                     <button type="button"  class="btn btn-outline-primary" id="edit" name="edit">edit</button>
                   </form>
