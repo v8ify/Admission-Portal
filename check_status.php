@@ -21,6 +21,7 @@
     $antiragging_uploaded = ($row["antiragging_uploaded"] == 1);
     $fee_category_approved = ($row["fee_category_approved"] == 1);
     $payment_done = ($row["payment_done"] == 1);
+    $disapproved = ($row["disapproved"] == 1);
 ?>
 
 <!DOCTYPE html>
@@ -57,12 +58,23 @@
                         <div class="row border py-4">
                             <h4 class="col">Fee category approval</h4>
                             <h4 class="col">
-                                <?php if ($fee_category_approved): ?>
-                                    Done ✅
-                                <?php else: ?>
-                                    Pending ⌛
-                                <?php endif; ?>
+                                <?php if ($fee_category_approved){
+                                    echo "Done ✅";
+                                }
+                                else if ($disapproved)
+                                {
+                                    echo "Disapproved ❎";
+                                   
+                                }
+                                else{
+                                    echo " Pending ⌛";
+                                }
+                                    
+                                ?>
+                            
                             </h4>
+                            <?php if ($disapproved) echo "<p>check your fee paying category and then submit your form again with antiragging-form and income certificate </p>";?>
+                            
                         </div>
 
                         <div class="row border py-4">

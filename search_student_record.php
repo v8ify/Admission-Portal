@@ -66,6 +66,7 @@
         .button-container {
             width: 250px;
             margin: 0px auto;
+
         }
 
         .input-container {
@@ -115,7 +116,9 @@
                                     
                                     <div class="button-container">
                                         <button type="submit" class="btn btn-primary mt-5">Approve Fee Payment</button>
+                                        
                                     </div>
+                                    
                                 </form>
                                 <?php else: ?>
                                 <form action="./fee_category_approval.php" method="post" class="form">
@@ -133,7 +136,9 @@
                                     <input type="hidden" name="prn" id="prn" value="<?php echo $prn ?>" />
                                     
                                     <div class="button-container">
-                                        <button type="submit" class="btn btn-primary mt-5">Approve Fee Paying Category</button>
+                                        <button type="submit" name="approve" class="btn btn-primary mt-5">Approve Fee Paying Category</button>
+                                        <input type="submit" class="btn btn-danger" name="disapprove" value="disapprove_fee_category" id="disapprove_fee_category">
+                                    
                                     </div>  
                                 </form>
                             <?php endif; ?>

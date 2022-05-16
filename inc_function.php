@@ -246,7 +246,7 @@ function getStudentFees($conn, $prn)
 // Used by admin
 function approveFeeCategory($conn, $prn)
 {
-    $q = "UPDATE student_auth set fee_category_approved = 1 WHERE prn='$prn'";
+    $q = "UPDATE student_auth set fee_category_approved = 1,disapproved=0 WHERE prn='$prn'";
     
     if ($result = mysqli_query($conn, $q))
     {
@@ -387,4 +387,20 @@ function list_of_student_submitted($conn)
     }
 
     mysqli_stmt_close($stmt);
+}
+
+function disapproveFeeCategory($conn, $prn)
+{
+    $q = "UPDATE student_auth set fee_category_approved = 0, disapproved=1,antiragging_uploaded=0  WHERE prn='$prn'";
+    
+    if ($result = mysqli_query($conn, $q))
+    {
+        
+        
+        header("location: ./dashboard.php?success=FeeCategoryApprovedDisApproved");
+
+    }
+    else{
+        header("location: ./dashboard.php?error=failedtoupdate");
+    }
 }

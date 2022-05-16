@@ -404,8 +404,9 @@
 
                     <h6>Admission Calendar Year</h6>
                     <div>
-                      <input class="form-control form-control-lg" type="text" name="acy" id="acy"   placeholder="Admission Calender Year" value="" aria-label="Username"
-                        aria-describedby="basic-addon1" required >
+                      <input class="form-control form-control-lg" type="text" name="acy" id="acy"   placeholder="Admission Calender Year" value="<?php echo date("Y"); ?>" aria-label="Username"
+                        aria-describedby="basic-addon1" required readonly
+                         >
                     </div><br><br>
 
                     <h6>Fee paying category</h6>
