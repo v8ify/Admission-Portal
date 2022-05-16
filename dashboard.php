@@ -21,7 +21,7 @@
                             <form action="./search_student_record.php" method="post">
                                 <div class="form-group">
                                     <label for="prn">PRN</label>
-                                    <input class="form-control mt-3" type="text" name="prn" id="prn" placeholder="Enter PRN..." />
+                                    <input class="form-control mt-3" type="text" name="prn" id="prn" required placeholder="Enter PRN..." />
                                 </div>
                                 <div class="form-group mt-3">
                                     <button class="btn btn-primary" type="submit">Search</button>
@@ -37,6 +37,10 @@
                                             else if ($_GET["success"] == "FeePaymentApproved"  )
                                             {
                                                 echo "<h4>Fee Payment Approved</h4>"; 
+                                            }
+                                            else if ($_GET["success"] == "FeeCategoryApprovedDisApproved")
+                                            {
+                                                echo "<h4>Fee Category Disapproved</h4>";
                                             }
                                         }
                                     ?>
@@ -55,7 +59,7 @@
                                     <form action="./download_rollcall.php" method="get">
                                         <div class="form-group">
                                             <label for="calendar_year">Academic Year</label>
-                                            <input class="form-control mt-3" type="number" name="calendar_year" id="calendar_year" placeholder="Enter academic year..." />
+                                            <input class="form-control mt-3" type="number" required name="calendar_year" id="calendar_year" placeholder="Enter academic year..." />
                                         </div>
                                         <div class="form-group">
                                             <label for="year">Year</label>

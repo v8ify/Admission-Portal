@@ -11,14 +11,6 @@
     }
 
     $prn = $_POST["prn"];
-    if (isset($_POST["approve"]))
-    {
-        approveFeeCategory($conn, $prn);
 
-    }
-    else if (isset($_POST["disapprove"]))
-    {
-        disapproveFeeCategory($conn, $prn);
-    }
-    
+    disapproveFeeCategory($conn, $prn);
 ?>

@@ -17,6 +17,7 @@
       <th scope="col">Category</th>
       <th scope="col">Fee Paying Category</th>
       <th scope="col">Admission Calendar Year</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -40,7 +41,16 @@
             echo "<td>",$row[5],"</td>";
             echo "<td>",$row[6],"</td>";
             echo "<td>",$row[7],"</td>";
-
+            echo '<td>
+              <form action="fee_category_approval.php" method="post">
+              <input class="form-control mt-3" type="text" name="prn" value="';echo $row[0],'" id="prn" hidden placeholder="Enter PRN..." />
+              <input type="submit" class="btn btn-success" name="approve_fee_category" value="approve_fee_category" id="approve_fee_category">
+              </form>
+              <form action="disapprove_fee_paying_category.php" method="post">
+              <input class="form-control mt-3" type="text" name="prn" value="';echo $row[0],'" id="prn" hidden placeholder="Enter PRN..." />
+              <input type="submit" class="btn btn-danger" name="approve_fee_category" value="disapprove_fee_category" id="disapprove_fee_category">
+              </form>
+             </td>';
             echo "</tr>";
     
         }
