@@ -70,6 +70,9 @@
                   <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                       <div class="card p-4 shadow-2-strong border-3" style="border-radius: 1rem;">
                           <h3 class="card-header text-center">Your admission successfully completed!</h3>
+                          <div class="card-body">
+                            <a href="<?php echo "payment_display?PRN=".$prn ?>"></a>
+                          </div>
                       </div>
                   </div>
               </div>

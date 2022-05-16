@@ -182,6 +182,8 @@ function update_record($conn,$prn,$line1,$line2,$line3,$state,$district,$taluka,
     
     if ($result=mysqli_query($conn,$q))
     {
+
+
         header("location: ./anti-ragging.php");
     }
     else{
@@ -281,7 +283,7 @@ function approveFeePayment($conn, $prn)
 // Used by user
 function handleAntiRaggingForm($conn, $prn, $filePath)
 {
-    $q = "UPDATE student_auth set antiragging_uploaded = 1, antiragging_file_path = '$filePath' WHERE prn='$prn'";
+    $q = "UPDATE student_auth set antiragging_uploaded = 1, disapproved = 0, antiragging_file_path = '$filePath' WHERE prn='$prn'";
     
     if ($result = mysqli_query($conn, $q))
     {
@@ -391,12 +393,25 @@ function list_of_student_submitted($conn)
 
 function disapproveFeeCategory($conn, $prn)
 {
-    $q = "UPDATE student_auth set fee_category_approved = 0, disapproved=1,antiragging_uploaded=0  WHERE prn='$prn'";
+    $q = "UPDATE student_auth set fee_category_approved = 0, disapproved = 1,antiragging_uploaded = 0  WHERE prn='$prn'";
     
     if ($result = mysqli_query($conn, $q))
     {
         
         
+        header("location: ./dashboard.php?success=FeeCategoryApprovedDisApproved");
+
+    }
+    else{
+        header("location: ./dashboard.php?error=failedtoupdate");
+    }
+}
+
+function cancelForm($conn, $prn) {
+    $q = "UPDATE student_auth set fee_category_approved = 0, disapproved = 1, antiragging_uploaded = 0  WHERE prn='$prn'";
+    
+    if ($result = mysqli_query($conn, $q))
+    {
         header("location: ./dashboard.php?success=FeeCategoryApprovedDisApproved");
 
     }
