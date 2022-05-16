@@ -406,16 +406,3 @@ function disapproveFeeCategory($conn, $prn)
         header("location: ./dashboard.php?error=failedtoupdate");
     }
 }
-
-function cancelForm($conn, $prn) {
-    $q = "UPDATE student_auth set fee_category_approved = 0, disapproved = 1, antiragging_uploaded = 0  WHERE prn='$prn'";
-    
-    if ($result = mysqli_query($conn, $q))
-    {
-        header("location: ./dashboard.php?success=FeeCategoryApprovedDisApproved");
-
-    }
-    else{
-        header("location: ./dashboard.php?error=failedtoupdate");
-    }
-}
