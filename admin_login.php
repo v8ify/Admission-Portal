@@ -18,7 +18,7 @@
         <div class="card shadow-2-strong border-4" style="border-radius: 1rem;">
           <div class="card-body p-5 text-center">
           <form action="inc_login.php" method="post">
-                <h3 class="mb-5">Sign in</h3>
+                <h3 class="mb-5">Admin Login</h3>
 
                 <div class="form-outline mb-4">
           

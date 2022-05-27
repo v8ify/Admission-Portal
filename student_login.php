@@ -28,6 +28,12 @@
                         <div class="form-outline mb-4">
                 
                         <input type="text" class="form-control form-control-lg"  placeholder="Password" name="Password"/>
+
+                        <small class="text-info">
+                            Initially your password will be your birth date. Ex. If your birth date is 1 August 2003
+                            your password will be 182003. Similarly for birth date 12 December 2002, Password will be
+                            12122002.
+                        </small>
                         </div>
 
                     
